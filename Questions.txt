@@ -1,0 +1,69 @@
+We want to make a multi class classification , because we have multiple classes and at the moment each image belong to a single unique class.
+
+Dataset:
+https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
+
+
+We have 6 classes of images spread in 6 folders and we have 6 types of items:
+-carboard
+-glass
+-metal
+-paper
+-plastic
+-trash
+
+We need to analize the data:
+-check distribution of files
+-image resolution
+-aspect ratio
+-file format type
+
+We need to aggregate the file name with their respective label in a tabular form.
+1. Let's define label codes.
+
+    carboard: 0
+    glass: 1
+    metal: 2
+    paper: 3
+    plastic: 4
+    trash: 5
+
+We need to process the data before feeding the model:
+- label encoding
+- spliting the date (training data / test data / validation)
+- normalize the data
+
+
+We need to have a multy class clasifier, so we should create a convolutional neural network:
+
+High lvl description NN:
+- we need to have a convoluted with feed foward network at the end.
+- we know that we have the size of images 512x384x3(rgb) - input layer = 589824 neurons and same format of images
+- the output layer we should have a softmax activation function
+* we need to specify:
+- loss function - (Categorical Cross-Entropy - Used for multi-class classification tasks (more than two classes)
+- optimizer( We need to try different optimizers)
+- hyperparameters
+- we will choose TensorFlow/Keras (deep learning framework to define the architecture of your neural network model)
+- train the model on training data.
+- test the model with test data
+
+
+
+
+
+
+
+Questions:
+
+Our datas are fully labeled?
+What we should do with "trash"
+What technology we will use? (PyTorch, Tensorflow, scikit-learn) ?
+
+
+Observations:
+
+I used a simple model at first with no optimzations not data augmentations etc.
+and I got a good performance an accurate model. Then I tried with 
+adding data augmentations, batch normalization, dropout layers, l2 normalization etc. and the performance was worse.
+I assume this is happening because the model becomes more complex but there are is not enough training data. The dataset is quite small.
