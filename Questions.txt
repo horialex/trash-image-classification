@@ -51,9 +51,6 @@ High lvl description NN:
 
 
 
-
-
-
 Questions:
 
 Our datas are fully labeled?
